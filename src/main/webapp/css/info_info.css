@@ -72,3 +72,15 @@ tr.report_record:hover {
 	background-color: black;
 	cursor: pointer;
 }
+
+#report_edit a {
+	text-decoration: none;
+	color:red;
+	padding: 1px;
+}
+
+#report_edit a:hover {
+	color: white;
+	background-color: black;
+	cursor: pointer;
+}

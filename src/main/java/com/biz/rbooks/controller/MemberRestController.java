@@ -22,6 +22,18 @@ public class MemberRestController {
 		this.memberSvc = memberSvc;
 	}
 	
+	@RequestMapping(value="join", method=RequestMethod.POST)
+	public String join(MemberDTO memberDTO) {
+		int ret = memberSvc.insert(memberDTO);
+		
+		if(ret > 0) {
+			return "JOIN_SUCCESS";
+		} else {
+			return "JOIN_FAIL";
+		}
+		
+	}
+	
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String login(MemberDTO memberDTO, Model model, HttpSession httpSession) {
 		
@@ -40,6 +52,16 @@ public class MemberRestController {
 		
 		httpSession.removeAttribute("MEMBER");
 		return "LOGOUT";
+	}
+	
+	
+	@RequestMapping(value="isMemberExists", method=RequestMethod.POST)
+	public String isMemberExists(String m_id) {
+		if(memberSvc.isMemberExists(m_id) != null) {
+			return "EXISTS"; 
+		} else {
+			return "NULL";
+		}
 	}
 
 }

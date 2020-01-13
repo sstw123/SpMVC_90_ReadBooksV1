@@ -32,9 +32,6 @@ $(function() {
 			})
 			return false;
 		}
-		if(confirm("정말 삭제하시겠습니까?")) {
-			document.location.href = rootPath + "/info/delete?bookCode=" + $(this).attr("data-bcode")
-		}
 	})
 	
 	
@@ -48,7 +45,7 @@ $(function() {
 	
 	
 	$("#report_edit").on("click", function(event) {
-		event.cancelBubble = true;
+		event.cancelBubble = true
 		
 		document.location.href = rootPath + "/report/update?rb_seq=" + $(this).attr("data-seq")
 	})
@@ -80,8 +77,8 @@ $(function() {
 						return false
 					}
 				}
+				
 			})
-			return false;
 		}
 	})
 	

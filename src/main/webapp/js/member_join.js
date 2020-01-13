@@ -37,7 +37,39 @@ $(function() {
 			return false
 		}
 		
-		$("form").submit()
+		
+		$.ajax({
+			url : rootPath + "/rest/member/isMemberExists",
+			data : {m_id : id},
+			type : "POST",
+			success : function(result) {
+				if(result == "EXISTS") {
+					alert("이미 존재하는 아이디입니다")
+					return false
+				} else {
+					// result가 NULL, 즉 중복된 아이디가 없으면 form submit
+					$.post(
+							rootPath + "/rest/member/join",
+							$("form").serialize(),
+							function(result) {
+								if(result == 'JOIN_SUCCESS') {
+									//페이지 새로고침
+									document.location.href = document.location.href
+								} else if (result == 'JOIN_FAIL') {
+									alert("회원가입에 실패했습니다")
+									document.location.href = rootPath + "/"
+								}
+							}
+					)
+				}
+			},
+			error : function(error) {
+				alert("서버 통신 오류")
+				return false
+			}
+		})
+		
+		
 	})
 	
 	$("span#close").on("click", function() {

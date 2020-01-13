@@ -98,7 +98,7 @@
 						<td>${reportDTO.rb_date}</td>
 						<td>${reportDTO.rb_subject}</td>
 						<td>${reportDTO.rb_star}</td>
-						<td id="report_edit" data-seq="${reportDTO.rb_seq}">수정</td>
+						<td id="report_edit" data-seq="${reportDTO.rb_seq}"><a href="${rootPath}/report/update?rb_seq=${reportDTO.rb_seq}">수정</a></td>
 						<td id="report_delete" data-seq="${reportDTO.rb_seq}" data-bcode="${reportDTO.rb_bcode}">삭제</td>
 					</tr>
 				</c:forEach>

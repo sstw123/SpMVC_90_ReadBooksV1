@@ -59,4 +59,8 @@ public class MemberService {
 		return memberDao.update(memberDTO);
 	}
 	
+	public MemberDTO isMemberExists(String m_id) {
+		return memberDao.selectById(m_id);
+	}
+	
 }
