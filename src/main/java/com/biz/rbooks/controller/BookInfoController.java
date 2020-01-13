@@ -73,15 +73,15 @@ public class BookInfoController {
 			//독서록의 rb_seq가 쿼리로 왔다면
 			rb_seq = Long.valueOf(str_rb_seq);
 			BookReportDTO reportDTO = reportSvc.selectBySeq(rb_seq);
-			model.addAttribute("reportDTO", reportDTO);
+			model.addAttribute("reportInfoDTO", reportDTO);
 		} else {
 			//독서록의 rb_seq가 쿼리로 안왔고
 			if(reportList == null || reportList.size() < 1) {
 				//독서록이 하나도 없다면
-				model.addAttribute("reportDTO", null);
+				model.addAttribute("reportInfoDTO", null);
 			} else {
 				//독서록이 있다면
-				model.addAttribute("reportDTO", reportList.get(0));
+				model.addAttribute("reportInfoDTO", reportList.get(0));
 			}
 		}
 		

@@ -40,34 +40,34 @@
 		<p>독서록</p>
 	</article>
 	<c:choose>
-		<c:when test="${empty reportDTO}">
+		<c:when test="${empty reportInfoDTO}">
 			<p class="noReport">독서록이 없습니다</p>
 		</c:when>
 		<c:otherwise>
 			<table>
 				<tr>
 					<th>일련번호</th>
-					<td>${reportDTO.rb_seq}</td>
+					<td>${reportInfoDTO.rb_seq}</td>
 					<th>별점</th>
-					<td>${reportDTO.rb_star}</td>
+					<td>${reportInfoDTO.rb_star}</td>
 				</tr>
 				<tr>
 					<th>독서일자</th>
-					<td>${reportDTO.rb_date}</td>
+					<td>${reportInfoDTO.rb_date}</td>
 					<th>독서시작시간</th>
-					<td>${reportDTO.rb_stime}</td>
+					<td>${reportInfoDTO.rb_stime}</td>
 				</tr>
 				<tr>
 					<th>독서시간</th>
-					<td>${reportDTO.rb_rtime} 시간</td>
+					<td>${reportInfoDTO.rb_rtime} 시간</td>
 					<th>한줄평</th>
-					<td>${reportDTO.rb_subject}</td>
+					<td>${reportInfoDTO.rb_subject}</td>
 				</tr>
 				<tr>
 					<th colspan="4">소감</th>
 				</tr>
 				<tr>
-					<td colspan="4">${reportDTO.rb_text}</td>
+					<td colspan="4">${reportInfoDTO.rb_text}</td>
 				</tr>
 			</table>
 		</c:otherwise>
