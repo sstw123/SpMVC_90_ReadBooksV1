@@ -75,6 +75,12 @@
 				</article>
 			</c:when>
 			
+			<c:when test="${RESULT == 'report_list'}">
+				<article id="report_list">
+					<%@ include file="/WEB-INF/views/include/report_list.jsp" %>
+				</article>
+			</c:when>
+			
 			<c:when test="${RESULT == 'report_insert'}">
 				<article id="report_write">
 					<%@ include file="/WEB-INF/views/include/report_insert.jsp" %>

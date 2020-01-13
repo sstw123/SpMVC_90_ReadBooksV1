@@ -11,7 +11,8 @@
 			<legend>독서록 작성</legend>
 			
 			<div>
-				<input type="hidden" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}"/>
+				<label for="rb_bcode">도서번호</label>
+				<input type="text" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}"/>
 			</div>
 			
 			<div>
@@ -21,12 +22,12 @@
 			
 			<div>
 				<label for="rb_stime">독서시작시각</label>
-				<input type="time" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}"/>
+				<input type="text" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}"/>
 			</div>
 			
 			<div>
 				<label for="rb_rtime">독서시간</label>
-				<input type="number" name="rb_rtime" id="rb_rtime" placeholder="독서시간"/>
+				<input type="text" name="rb_rtime" id="rb_rtime" placeholder="독서시간"/>
 			</div>
 			
 			<div>
@@ -41,7 +42,7 @@
 			
 			<div>
 				<label for="rb_star">별점</label>
-				<input type="number" name="rb_star" id="rb_star" placeholder="별점" min="1" max="5" value="${reportInsertDTO.rb_star}" />
+				<input type="text" name="rb_star" id="rb_star" placeholder="별점" min="1" max="5" value="${reportInsertDTO.rb_star}" />
 			</div>
 			
 			<div>

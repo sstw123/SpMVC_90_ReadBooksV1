@@ -1,5 +1,6 @@
 $(function() {
-	$("#info_edit").on("click", function() {
+	$("#info_edit").on("click", function(event) {
+		event.cancelBubble = true
 		document.location.href = rootPath + "/info/edit?bookCode=" + $(this).attr("data-bcode")
 	})
 	
@@ -47,7 +48,8 @@ $(function() {
 	
 	
 	$("#report_edit").on("click", function(event) {
-		event.cancelBubble = true
+		event.cancelBubble = true;
+		
 		document.location.href = rootPath + "/report/update?rb_seq=" + $(this).attr("data-seq")
 	})
 	

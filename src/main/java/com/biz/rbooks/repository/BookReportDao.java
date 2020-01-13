@@ -11,6 +11,9 @@ import com.biz.rbooks.domain.BookReportDTO;
 
 public interface BookReportDao {
 	
+	@Select("select * from TBL_READ_BOOK order by rb_bcode")
+	public List<BookReportDTO> selectAll();
+	
 	@Select("select * from TBL_READ_BOOK where RB_BCODE = #{b_code,jdbcType=VARCHAR}")
 	public List<BookReportDTO> selectByBCode(String b_code);
 
@@ -25,5 +28,4 @@ public interface BookReportDao {
 	
 	@Delete("delete from TBL_READ_BOOK where RB_SEQ = #{rb_seq,jdbcType=VARCHAR}")
 	public int delete(long rb_seq);
-
 }

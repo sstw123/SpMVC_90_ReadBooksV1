@@ -8,6 +8,7 @@
 	<div class="button_box">
 		<button id="info_insert" type="button">도서등록</button>
 	</div>
+	<h3>도서목록</h3>
 	<table>
 		<tr>
 			<th>No.</th>
@@ -19,7 +20,7 @@
 			<th>구입가격</th>
 		</tr>
 		<c:forEach items="${InfoList}" var="infoDTO" varStatus="status">
-			<tr class="book_record" data-b_code="${infoDTO.b_code}">
+			<tr class="record" data-b_code="${infoDTO.b_code}">
 				<td>${status.count}</td>
 				<td>${infoDTO.b_code}</td>
 				<td>${infoDTO.b_name}</td>

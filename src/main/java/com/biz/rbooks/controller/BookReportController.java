@@ -1,5 +1,7 @@
 package com.biz.rbooks.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,17 @@ public class BookReportController {
 		return new BookReportDTO();
 	}
 	// 생성자 끝
+	
+	// 사용하지 않는 메소드
+	@RequestMapping(value="list", method=RequestMethod.GET)
+	public String list(Model model) {
+		List<BookReportDTO> reportList = reportSvc.selectAll();
+		
+		model.addAttribute("RESULT", "report_list");
+		model.addAttribute("ReportList", reportList);
+		
+		return "home";
+	}
 	
 	@RequestMapping(value="insert", method=RequestMethod.GET)
 	public String insert(@RequestParam("bookCode") String b_code, Model model) {

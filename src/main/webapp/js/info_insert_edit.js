@@ -19,7 +19,7 @@ $(function() {
 			return false
 		} else if($("#b_code").val() != "") {
 			$.ajax({
-				url : rootPath + "/rest/info/checkBcode",
+				url : rootPath + "/rest/info/isBcodeExists",
 				data : {
 					bookCode : $("#b_code").val()
 				},
@@ -46,8 +46,6 @@ $(function() {
 			$("#b_auther").focus()
 			return false
 		}
-		
-		
 		
 	})
 })

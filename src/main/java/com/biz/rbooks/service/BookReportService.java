@@ -72,5 +72,9 @@ public class BookReportService {
 		
 		return reportDTO;
 	}
+
+	public List<BookReportDTO> selectAll() {
+		return reportDao.selectAll();
+	}
 	
 }

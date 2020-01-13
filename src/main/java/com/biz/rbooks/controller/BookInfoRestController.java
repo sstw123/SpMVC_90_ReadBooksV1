@@ -28,7 +28,7 @@ public class BookInfoRestController {
 		return ret + "";
 	}
 	
-	@RequestMapping(value="checkBcode", method=RequestMethod.POST)
+	@RequestMapping(value="isBcodeExists", method=RequestMethod.POST)
 	public String checkBcode(@RequestParam("bookCode")String b_code) {
 		
 		if(infoSvc.selectByBCode(b_code) == null) {

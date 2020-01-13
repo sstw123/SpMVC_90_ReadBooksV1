@@ -1,21 +1,30 @@
 @charset "UTF-8";
+
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	text-align: center;
 	padding: 12px 16px;
 	margin: 0px auto;
-	
+}
+
+table {
+	table-layout:fixed;
+	width:100%;
+}
+
+th, td {
+	width: auto;
 	text-overflow:ellipsis;
 	overflow:hidden;
 	white-space:nowrap;
 }
 
-tr.record, tr.book_record {
+tr.record {
 	cursor:pointer;
 }
 
-tr.record:hover, tr.book_record:hover {
+tr.record:hover {
 	background-color: #e7e7e7;
 }
 
