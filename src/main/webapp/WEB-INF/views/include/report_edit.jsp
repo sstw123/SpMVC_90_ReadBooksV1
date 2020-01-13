@@ -45,7 +45,7 @@
 			</div>
 			
 			<div>
-				<button id="btn_submit">작성</button>
+				<button id="btn_submit" type="button">작성</button>
 			</div>
 		</fieldset>
 	</form:form>
