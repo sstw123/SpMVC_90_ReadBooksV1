@@ -40,7 +40,7 @@
 			</div>
 			
 			<div>
-				<button id="btn_submit" type="button">작성</button>
+				<button id="btn_insert_submit" type="button">작성</button>
 			</div>
 		</fieldset>
 	</form>
