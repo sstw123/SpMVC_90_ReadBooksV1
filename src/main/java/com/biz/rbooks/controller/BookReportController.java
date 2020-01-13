@@ -40,14 +40,13 @@ public class BookReportController {
 		// @ModelAttribute BookReportDTO reportDTO를 넣지 않는다
 		// @ModelAttribute를 넣으면 수정 버튼 클릭 후 뒤로가기 등을 눌렀을 때 값이 유지되어 나타나기 때문
 
-		BookReportDTO reportDTO = new BookReportDTO();
+		BookReportDTO reportInsertDTO = new BookReportDTO();
 
 		//rb_bcode, 독서일자, 독서시작시간, 기본별점 세팅후 반환받기
-		reportDTO = reportSvc.setDefaultInsert(reportDTO, b_code);
+		reportInsertDTO = reportSvc.setDefaultInsert(reportInsertDTO, b_code);
 		
-		model.addAttribute("LABEL", "독서록 작성");
 		model.addAttribute("RESULT", "report_insert");
-		model.addAttribute("reportInsertDTO", reportDTO);
+		model.addAttribute("reportInsertDTO", reportInsertDTO);
 		
 		//독서록 쓰기를 눌렀다가 뒤로가기를 눌러도, SessionAttributes의 reportDTO의 값을 null로 바꿔서
 		//독서록이 하나도 없다면 info_info.jsp에 표시 안되도록 하기
@@ -70,7 +69,6 @@ public class BookReportController {
 		
 		BookReportDTO reportDTO = reportSvc.selectBySeq(rb_seq);//get으로 입력받은 rb_seq값으로 DB에서 레코드 가져오기
 		
-		model.addAttribute("LABEL", "독서록 수정");
 		model.addAttribute("RESULT", "report_edit");
 		model.addAttribute("reportDTO", reportDTO);
 		

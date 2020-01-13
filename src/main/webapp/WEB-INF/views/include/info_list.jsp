@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="${rootPath}/css/info_list.css">
 <script src="${rootPath}/js/info_list.js"></script>
+
 <body>
 	<div class="button_box">
 		<button id="info_insert" type="button">도서등록</button>

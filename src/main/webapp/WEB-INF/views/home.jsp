@@ -28,7 +28,8 @@
 	
 	<nav>
 		<ul>
-			<li><a href="${rootPath}/info/list">도서목록</a></li>
+			<li><a href="${rootPath}/info/list">홈</a></li>
+			<li><a href="${rootPath}/info/booklist">도서목록</a></li>
 			<c:choose>
 				<c:when test="${empty MEMBER}">
 					<li class="login-box"><a href="${rootPath}/member/login" id="login">로그인</a></li>
@@ -47,6 +48,12 @@
 			<c:when test="${RESULT == 'info_list'}">
 				<article id="info_list">
 					<%@ include file="/WEB-INF/views/include/info_list.jsp" %>
+				</article>
+			</c:when>
+			
+			<c:when test="${RESULT == 'info_booklist'}">
+				<article id="info_booklist">
+					<%@ include file="/WEB-INF/views/include/info_booklist.jsp" %>
 				</article>
 			</c:when>
 			

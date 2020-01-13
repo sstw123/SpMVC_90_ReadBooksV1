@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 	$("#login_join").on("click", function() {
 		//회원가입 페이지로 이동
 		document.location.href = rootPath + "/member/join"

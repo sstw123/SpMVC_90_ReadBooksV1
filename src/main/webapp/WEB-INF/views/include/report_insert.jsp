@@ -8,7 +8,7 @@
 <body>
 	<form method="POST">
 		<fieldset>
-			<legend>${LABEL}</legend>
+			<legend>독서록 작성</legend>
 			
 			<div>
 				<input type="hidden" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}"/>
@@ -21,7 +21,7 @@
 			
 			<div>
 				<label for="rb_stime">독서시작시각</label>
-				<input type="time" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reporInsertDTO.rb_stime}"/>
+				<input type="time" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}"/>
 			</div>
 			
 			<div>
@@ -45,7 +45,7 @@
 			</div>
 			
 			<div>
-				<button id="btn_submit">작성</button>
+				<button id="btn_submit" type="button">작성</button>
 			</div>
 		</fieldset>
 	</form>

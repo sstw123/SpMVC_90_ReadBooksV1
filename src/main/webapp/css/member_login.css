@@ -32,11 +32,11 @@
 	cursor: pointer;
 }
 
-.login_form h3 {
+.login_form #login_alert {
 	color: white;
 	font-weight: 300;
 	background-color: red;
-	border-radius: 20px;
+	border-radius: 2px;
 }
 
 .login_form input {

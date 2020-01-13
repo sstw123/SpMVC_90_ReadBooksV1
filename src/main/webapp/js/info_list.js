@@ -5,6 +5,5 @@ $(function() {
 	
 	$("tr.record").on("click", function() {
 		document.location.href = rootPath + "/info/info?bookCode=" + $(this).attr("data-b_code")
-		
 	})
 })

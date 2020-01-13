@@ -3,7 +3,7 @@ $(function() {
 		document.location.href = rootPath + "/info/edit?bookCode=" + $(this).attr("data-bcode")
 	})
 	
-	$("#info_delete").on("click", function() {
+	$("#info_delete").on("click", function(event) {
 		event.cancelBubble = true
 		
 		if(confirm("정말 삭제하시겠습니까?")) {
@@ -46,12 +46,12 @@ $(function() {
 	})
 	
 	
-	$("#report_edit").on("click", function() {
+	$("#report_edit").on("click", function(event) {
 		event.cancelBubble = true
 		document.location.href = rootPath + "/report/update?rb_seq=" + $(this).attr("data-seq")
 	})
 	
-	$("#report_delete").on("click", function() {
+	$("#report_delete").on("click", function(event) {
 		event.cancelBubble = true
 		
 		if(confirm("정말 삭제하시겠습니까?")) {

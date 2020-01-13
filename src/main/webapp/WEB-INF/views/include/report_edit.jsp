@@ -8,7 +8,7 @@
 <body>
 	<form:form modelAttribute="reportDTO">
 		<fieldset>
-			<legend>${LABEL}</legend>
+			<legend>독서록 수정</legend>
 			
 			<div>
 				<form:hidden path="rb_bcode"/>

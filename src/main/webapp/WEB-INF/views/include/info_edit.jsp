@@ -40,7 +40,7 @@
 			</div>
 			
 			<div>
-				<button id="btn_submit">수정</button>
+				<button id="btn_submit" type="button">수정</button>
 			</div>
 		</fieldset>
 	</form:form>

@@ -54,6 +54,8 @@ public class BookReportService {
 
 	public BookReportDTO setDefaultInsert(BookReportDTO reportDTO, String b_code) {
 		
+		reportDTO = new BookReportDTO();
+		
 		Date date = new Date();
 		SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat st = new SimpleDateFormat("hh:mm:ss");
@@ -64,8 +66,8 @@ public class BookReportService {
 		
 		reportDTO.setRb_stime(st.format(date));
 		
-		if(reportDTO.getRb_star() == 0) {
-			reportDTO.setRb_star(3);
+		if(reportDTO.getRb_star() == null) {
+			reportDTO.setRb_star("3");
 		}
 		
 		return reportDTO;

@@ -16,7 +16,7 @@
 			
 			<div>
 				<label for="b_name">도서명</label><br/>
-				<input type="text" id="b_name" name="b_code" placeholder="도서명" maxlength="125"/>
+				<input type="text" id="b_name" name="b_name" placeholder="도서명" maxlength="125"/>
 			</div>
 			
 			<div>
@@ -40,7 +40,7 @@
 			</div>
 			
 			<div>
-				<button id="btn_submit">작성</button>
+				<button id="btn_submit" type="button">작성</button>
 			</div>
 		</fieldset>
 	</form>

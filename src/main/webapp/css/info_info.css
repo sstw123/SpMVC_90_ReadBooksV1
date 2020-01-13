@@ -9,10 +9,6 @@ table, th, td {
 	margin: 0px auto;
 }
 
-th {
-	color: blue;
-}
-
 article.title {
 	text-align: center;
 	margin: 10px 0;

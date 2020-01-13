@@ -42,6 +42,8 @@ public class PreInterceptor extends HandlerInterceptorAdapter {
 			return false;
 		}
 		
+		
+		
 		//return true;//컨트롤러에게 전달하기		
 		return super.preHandle(request, response, handler);
 	}

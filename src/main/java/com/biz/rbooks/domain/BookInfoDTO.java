@@ -22,7 +22,7 @@ public class BookInfoDTO {
 	private String b_auther;//	nvarchar2(125 char)
 	private String b_comp;//	nvarchar2(125 char)
 	private String b_year;//	varchar2(10 byte)
-	private int b_iprice;//	number
+	private String b_iprice;//	number
 	
 	private List<BookReportDTO> bookReportList;
 

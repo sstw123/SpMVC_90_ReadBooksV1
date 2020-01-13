@@ -50,6 +50,17 @@ public class BookInfoController {
 		return "home";
 	}
 	
+	@RequestMapping(value="booklist", method=RequestMethod.GET)
+	public String booklist(Model model) {
+		
+		List<BookInfoDTO> infoList = infoSvc.selectAll();
+		
+		model.addAttribute("RESULT", "info_booklist");
+		model.addAttribute("InfoList", infoList);
+		
+		return "home";
+	}
+	
 	@RequestMapping(value="info", method=RequestMethod.GET)
 	public String bookInfo(@RequestParam("bookCode")String b_code, @RequestParam(name="rb_seq", required=false)String str_rb_seq , Model model) {
 		long rb_seq = 0;
@@ -99,7 +110,12 @@ public class BookInfoController {
 		
 		int ret = infoSvc.insert(infoDTO);//POST로 받은 infoDTO 값 도서정보 DB에 insert
 		
-		return "redirect:/info/list";//리스트로 돌아가기
+		if(ret > 0) {
+			return "redirect:/info/list";//리스트로 돌아가기
+		} else {
+			return "redirect:/info/list";//리스트로 돌아가기
+		}
+		
 	}
 	
 	@RequestMapping(value="edit", method=RequestMethod.GET)

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.biz.rbooks.domain.BookInfoDTO;
 import com.biz.rbooks.repository.BookInfoDao;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BookInfoService {
 	
@@ -28,6 +31,9 @@ public class BookInfoService {
 	}
 
 	public int insert(BookInfoDTO infoDTO) {
+		if(infoDao.selectByBCode(infoDTO.getB_code()) != null ) {
+			return 0;
+		}
 		return infoDao.insert(infoDTO);
 	}
 

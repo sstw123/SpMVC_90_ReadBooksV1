@@ -59,7 +59,7 @@
 				</tr>
 				<tr>
 					<th>독서시간</th>
-					<td>${reportDTO.rb_rtime}</td>
+					<td>${reportDTO.rb_rtime} 시간</td>
 					<th>한줄평</th>
 					<td>${reportDTO.rb_subject}</td>
 				</tr>
