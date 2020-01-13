@@ -1,0 +1,37 @@
+@charset "UTF-8";
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 12px 16px;
+	margin: 0px auto;
+}
+
+tr.record {
+	cursor:pointer;
+}
+
+tr.record:hover {
+	background-color: #e7e7e7;
+}
+
+.button_box {
+	text-align: center;
+	width: 80%;
+	margin: 20px auto;
+}
+
+button#info_insert {
+	background-color: white;
+	padding: 14px 30px;
+	
+	border: 1px solid skyblue;
+	border-radius: 5px;
+	color: skyblue;
+}
+
+button#info_insert:hover  {
+	color: white;
+	background-color: skyblue;
+	cursor: pointer;
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+nav {
+	background-color: rgb(118, 118, 118);
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+}
+nav li#m_id {
+	display: block;
+	color: white;
+	padding: 14px 20px;
+	text-align: center;
+	text-decoration: none;
+}
+nav ul li a {
+	display: block;
+	width: 100px;
+	color: white;
+	padding: 14px 20px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(100, 100, 100);
+}
+nav ul li a:hover {
+	background-color: rgb(240, 240, 240);
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.login-box {
+	margin-left: auto;
+}

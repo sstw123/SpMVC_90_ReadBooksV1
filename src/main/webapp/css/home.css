@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body {
+	width: 60%;
+	margin: 0 auto;
+}
+
+header {
+	border: 1px solid black;
+	text-align: center;
+	cursor: pointer;
+	padding: 14px 16px;
+}
+
+section#result {
+	margin: 20px auto;
+}
+
+section#login_modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+section#login_modal form {
+	position: relative;
+	padding: 10px;
+	margin: auto;
+	animation-name: form-ani;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+	
+	/* -webkit- : 구글, 사파리 */
+	-webkit-animation-name: form-ani;
+	-webkit-animation-duration: 0.9s;
+	-webkit-animation-fill-mode: forwards;
+	
+	/* -moz- : 파이어폭스 */
+	-moz-animation-name: form-ani;
+	-moz-animation-duration: 0.9s;
+	-moz-animation-fill-mode: forwards;
+	
+	/* 익스 */
+	-ms-animation-name: form-ani;
+	-ms-animation-duration: 0.9s;
+	-ms-animation-fill-mode: forwards;
+	
+	/* 오페라 */
+	-o-animation-name: form-ani;
+	-o-animation-duration: 0.9s;
+	-o-animation-fill-mode: forwards;
+}
+
+/* animation 실행하는 css */
+@keyFrames form-ani {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 200px;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyFrames form-ani {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 200px;
+		opacity: 1;
+	}
+}

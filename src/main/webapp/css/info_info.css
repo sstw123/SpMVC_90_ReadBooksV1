@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	
+	padding: 10px 16px;
+	margin: 0px auto;
+}
+
+th {
+	color: blue;
+}
+
+article.title {
+	text-align: center;
+	margin: 10px 0;
+}
+
+article.title p {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+p.noReport {
+	text-align: center;
+}
+
+tr.report_record {
+	cursor:pointer;
+}
+
+tr.report_record:hover {
+	background-color: #e7e7e7;
+}
+
+#info_insert {
+	display:block;
+	margin: 10px 0 30px auto;
+	padding: 14px 16px;
+}
+
+.button_box1 {
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.button_box2 {
+	text-align: center;
+}
+
+.info_button {
+	background-color: white;
+	padding: 14px 16px;
+	margin: 10px;
+	
+	border: 1px solid skyblue;
+	border-radius: 5px;
+	color: skyblue;
+}
+
+.info_button:hover {
+	color: white;
+	background-color: skyblue;
+	cursor: pointer;
+}
+
+#report_edit, #report_delete {
+	color: red;
+}
+
+#report_edit:hover, #report_delete:hover {
+	color: white;
+	background-color: black;
+	cursor: pointer;
+}
