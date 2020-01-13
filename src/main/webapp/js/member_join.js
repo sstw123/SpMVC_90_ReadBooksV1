@@ -54,7 +54,7 @@ $(function() {
 							function(result) {
 								if(result == 'JOIN_SUCCESS') {
 									//페이지 새로고침
-									document.location.href = document.location.href
+									document.location.href = rootPath + "/"
 								} else if (result == 'JOIN_FAIL') {
 									alert("회원가입에 실패했습니다")
 									document.location.href = rootPath + "/"

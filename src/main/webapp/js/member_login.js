@@ -24,8 +24,8 @@ $(function() {
 				$("form").serialize(),
 				function(result) {
 					if(result == 'LOGIN_SUCCESS') {
-						//페이지 새로고침
-						document.location.href = document.location.href
+						//이전 페이지로
+						window.history.back()
 					} else if (result == 'LOGIN_FAIL') {
 						$("#login_alert").text("아이디 또는 비밀번호가 일치하지 않습니다")
 						return false
