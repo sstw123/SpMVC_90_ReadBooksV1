@@ -17,6 +17,7 @@
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="ssfb">
 		<property name="dataSource" ref="bds" />
 		<property name="typeAliasesPackage" value="com.biz.rbooks.domain"/>
+		<property name="mapperLocations" value="/WEB-INF/spring/mapper/*-mapper.xml" />
 	</bean>
 	
 	<mybatis-spring:scan base-package="com.biz.rbooks.repository"/>

@@ -72,3 +72,7 @@
 .join_form button:hover {
 	background-color: #2ECC71;
 }
+
+#join_alert {
+	color: red;
+}

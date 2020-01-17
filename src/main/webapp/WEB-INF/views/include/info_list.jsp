@@ -5,12 +5,10 @@
 <script src="${rootPath}/js/info_list.js"></script>
 
 <body>
-	<div class="button_box">
-		<button id="info_insert" type="button">도서등록</button>
-	</div>
+	<h3>독서록</h3>
 	<table>
 		<tr>
-			<th>No</th>
+			<th>번호</th>
 			<th>도서코드</th>
 			<th>도서명</th>
 			<th>독서일자</th>
@@ -28,5 +26,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<div class="button_box">
+		<button id="info_insert" type="button">도서등록</button>
+	</div>
+	<section>
+		<%@ include file="/WEB-INF/views/include/pagination.jsp" %>
+	</section>
 </body>
 </html>

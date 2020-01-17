@@ -2,7 +2,6 @@ package com.biz.rbooks.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,12 +12,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.biz.rbooks.domain.BookInfoDTO;
 import com.biz.rbooks.domain.BookReportDTO;
+import com.biz.rbooks.domain.PaginationDTO;
 import com.biz.rbooks.service.BookInfoService;
 import com.biz.rbooks.service.BookReportService;
+import com.biz.rbooks.service.PaginationService;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
-@Slf4j
+@RequiredArgsConstructor
 @SessionAttributes("InfoDTO")
 @RequestMapping("info")
 @Controller
@@ -26,12 +27,7 @@ public class BookInfoController {
 	
 	private final BookInfoService infoSvc;
 	private final BookReportService reportSvc;
-	
-	@Autowired
-	public BookInfoController(BookInfoService infoSvc, BookReportService reportSvc) {
-		this.infoSvc = infoSvc;
-		this.reportSvc = reportSvc;
-	}
+	private final PaginationService pageSvc;
 	
 	@ModelAttribute("InfoDTO")
 	public BookInfoDTO bookInfoDTO() {
@@ -40,9 +36,14 @@ public class BookInfoController {
 	// 생성자 끝
 
 	@RequestMapping(value="list", method=RequestMethod.GET)
-	public String list(Model model) {
+	public String list(Model model, @RequestParam(value="currPage",required=false,defaultValue="1") int currPageNo) {
 		
-		List<BookInfoDTO> infoList = infoSvc.selectAll();
+		long totalCount = infoSvc.countAll();
+		PaginationDTO pagiDTO = pageSvc.getPagination(totalCount, currPageNo);
+		
+		model.addAttribute("pagiDTO", pagiDTO);
+		
+		List<BookInfoDTO> infoList = infoSvc.selectByPage(pagiDTO);
 		
 		model.addAttribute("RESULT", "info_list");
 		model.addAttribute("InfoList", infoList);
@@ -51,9 +52,14 @@ public class BookInfoController {
 	}
 	
 	@RequestMapping(value="booklist", method=RequestMethod.GET)
-	public String booklist(Model model) {
+	public String booklist(Model model, @RequestParam(value="currPage",required=false,defaultValue="1") int currPageNo) {
 		
-		List<BookInfoDTO> infoList = infoSvc.selectAll();
+		long totalCount = infoSvc.countAll();
+		PaginationDTO pagiDTO = pageSvc.getPagination(totalCount, currPageNo);
+		
+		model.addAttribute("pagiDTO", pagiDTO);
+		
+		List<BookInfoDTO> infoList = infoSvc.selectByPage(pagiDTO);
 		
 		model.addAttribute("RESULT", "info_booklist");
 		model.addAttribute("InfoList", infoList);

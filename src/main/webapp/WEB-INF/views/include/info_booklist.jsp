@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<link rel="stylesheet" type="text/css" href="${rootPath}/css/info_list.css">
+<link rel="stylesheet" type="text/css" href="${rootPath}/css/info_booklist.css">
 <script src="${rootPath}/js/info_list.js"></script>
 
 <body>
-	<div class="button_box">
-		<button id="info_insert" type="button">도서등록</button>
-	</div>
+	
 	<h3>도서목록</h3>
 	<table>
 		<tr>
-			<th>No.</th>
+			<th>번호</th>
 			<th>도서코드</th>
 			<th>도서명</th>
 			<th>저자</th>
@@ -31,5 +29,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<div class="button_box">
+		<button id="info_insert" type="button">도서등록</button>
+	</div>
+	<section>
+		<%@ include file="/WEB-INF/views/include/pagination.jsp" %>
+	</section>
 </body>
 </html>

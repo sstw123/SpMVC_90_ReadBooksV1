@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.UpdateProvider;
 
 import com.biz.rbooks.domain.BookInfoDTO;
 import com.biz.rbooks.domain.BookReportDTO;
+import com.biz.rbooks.domain.PaginationDTO;
 
 public interface BookInfoDao {
 	
@@ -45,5 +46,10 @@ public interface BookInfoDao {
 	
 	@Delete("delete from tbl_books where b_code = #{b_code,jdbcType=VARCHAR}")
 	public int delete(String b_code);
+
+	@Select("select count(*) from tbl_books")
+	public long countAll();
+
+	public List<BookInfoDTO> selectByPage(PaginationDTO pagiDTO);
 
 }

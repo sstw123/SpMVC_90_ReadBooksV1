@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.biz.rbooks.domain.BookInfoDTO;
+import com.biz.rbooks.domain.PaginationDTO;
 import com.biz.rbooks.repository.BookInfoDao;
 
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +44,14 @@ public class BookInfoService {
 
 	public int delete(String b_code) {
 		return infoDao.delete(b_code);
+	}
+
+	public long countAll() {
+		return infoDao.countAll();
+	}
+
+	public List<BookInfoDTO> selectByPage(PaginationDTO pagiDTO) {
+		return infoDao.selectByPage(pagiDTO);
 	}
 
 }

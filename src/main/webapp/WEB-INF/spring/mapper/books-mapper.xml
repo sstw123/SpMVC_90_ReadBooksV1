@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biz.rbooks.repository.BookInfoDao">
+
+	<select id="selectByPage" resultMap="bookInfoResultMap">
+		select *
+		from
+			(select /*+ first_rows_100 */ rownum as num, A.*
+			from
+				(select /*+ index_desc(tbl_books) first_rows */ *
+				from tbl_books
+				order by b_name) A
+		    where rownum &lt;= #{limit} ) B
+		where B.num &gt;= #{offset}
+	</select>
+	
+	<resultMap type="bookInfoDTO" id="bookInfoResultMap">
+		<id property="b_code" column="b_code" />
+		<result property="b_name" column="b_name" />
+		<result property="b_auther" column="b_auther" />
+		<result property="b_comp" column="b_comp" />
+		<result property="b_year" column="b_year"/>
+		<result property="b_iprice" column="b_iprice" />
+		
+		<collection property="bookReportList"
+					ofType="bookReportDTO"
+					column="b_code"
+					select="getBookReport"/>
+	</resultMap>
+	
+</mapper>

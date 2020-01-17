@@ -31,7 +31,7 @@ $(function() {
 			$("#join_alert").text("비밀번호를 입력하세요")
 			return false
 		} else if (pw2 == "") {
-			$("#join_alert").text("비밀번호 확인을 입력하세요")
+			$("#join_alert").text("비밀번호 확인란을 입력하세요")
 			return false
 		} else if (pw1 != pw2) {
 			return false
