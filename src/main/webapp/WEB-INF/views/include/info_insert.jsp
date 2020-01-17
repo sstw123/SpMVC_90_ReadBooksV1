@@ -5,7 +5,7 @@
 <script src="${rootPath}/js/info_insert_edit.js"></script>
 
 <body>
-	<form method="POST">
+	<form method="POST" id="info_form">
 		<fieldset>
 			<legend>도서 등록</legend>
 			

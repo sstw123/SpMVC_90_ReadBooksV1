@@ -16,7 +16,7 @@ section#result {
 	margin: 20px auto;
 }
 
-section#login_modal {
+article#login_modal, article#join_modal {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -27,7 +27,7 @@ section#login_modal {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-section#login_modal form {
+article#login_modal form, article#join_modal form {
 	position: relative;
 	padding: 10px;
 	margin: auto;
@@ -57,7 +57,7 @@ section#login_modal form {
 }
 
 /* animation 실행하는 css */
-@keyFrames form-ani {
+@keyframes form-ani {
 	from {
 		top: -300px;
 		opacity: 0;
@@ -68,7 +68,7 @@ section#login_modal form {
 	}
 }
 
-@-webkit-keyFrames form-ani {
+@-webkit-keyframes form-ani {
 	from {
 		top: -300px;
 		opacity: 0;

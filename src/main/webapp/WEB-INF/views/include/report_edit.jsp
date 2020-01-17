@@ -6,7 +6,7 @@
 <script src="${rootPath}/js/report_insert_edit.js"></script>
 
 <body>
-	<form:form modelAttribute="reportDTO">
+	<form:form modelAttribute="reportDTO" id="report_form">
 		<fieldset>
 			<legend>독서록 수정</legend>
 			

@@ -11,14 +11,8 @@ nav ul {
 	padding: 0;
 	justify-content: center;
 }
-nav li#m_id {
-	display: block;
-	color: white;
-	padding: 14px 20px;
-	text-align: center;
-	text-decoration: none;
-}
-nav ul li a {
+
+nav ul li{
 	display: block;
 	width: 100px;
 	color: white;
@@ -27,7 +21,13 @@ nav ul li a {
 	text-decoration: none;
 	background-color: rgb(100, 100, 100);
 }
-nav ul li a:hover {
+
+nav ul li#m_id {
+	width: auto;
+	background-color: inherit;
+}
+
+nav ul li:hover {
 	background-color: rgb(240, 240, 240);
 	color: black;
 	font-weight: bold;

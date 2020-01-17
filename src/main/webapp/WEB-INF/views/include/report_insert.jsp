@@ -6,7 +6,7 @@
 <script src="${rootPath}/js/report_insert_edit.js"></script>
 
 <body>
-	<form method="POST">
+	<form method="POST" id="report_form">
 		<fieldset>
 			<legend>독서록 작성</legend>
 			

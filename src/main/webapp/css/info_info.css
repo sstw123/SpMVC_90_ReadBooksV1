@@ -23,14 +23,6 @@ p.noReport {
 	text-align: center;
 }
 
-tr.report_record {
-	cursor:pointer;
-}
-
-tr.report_record:hover {
-	background-color: #e7e7e7;
-}
-
 #info_insert {
 	display:block;
 	margin: 10px 0 30px auto;
@@ -60,27 +52,5 @@ tr.report_record:hover {
 .info_button:hover {
 	color: white;
 	background-color: skyblue;
-	cursor: pointer;
-}
-
-#report_edit, #report_delete {
-	color: red;
-}
-
-#report_edit:hover, #report_delete:hover {
-	color: white;
-	background-color: black;
-	cursor: pointer;
-}
-
-#report_edit a {
-	text-decoration: none;
-	color:red;
-	padding: 1px;
-}
-
-#report_edit a:hover {
-	color: white;
-	background-color: black;
 	cursor: pointer;
 }

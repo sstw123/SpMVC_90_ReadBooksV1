@@ -29,6 +29,8 @@ public class PreInterceptor extends HandlerInterceptorAdapter {
 		
 		// 3. MEMBER라는 Object 객체가 없다면(== null) 로그인이 안되어있다는 뜻
 		if(memberObj == null) {
+			
+			request.setAttribute("MODAL", "LOGIN");
 			/*
 			 * context/image/upload에서 로그인 path로 redirect를 수행하는데 경로 지정이 애매하게 작동한다
 			 * 현재 경로가 /image/update이기 때문에
@@ -38,16 +40,12 @@ public class PreInterceptor extends HandlerInterceptorAdapter {
 			// 4. 로그인화면(form)으로 redirect를 수행하여 login을 하도록 유도
 			//response.sendRedirect(request.getContextPath() + "/member/login");
 			response.setStatus(403);//403 Forbidden 접근 권한 없음, HttpServletResponse.SC_FORBIDDEN = 403
-			// 5. 현재 로그인이 안되어 있으므로 Dispatcher에게 더이상 다른 일(컨트롤러로 보내는 것)을 진행하지 말라는 의미 
+			// 5. 현재 로그인이 안되어 있으므로 Dispatcher에게 더 이상 다른 일(컨트롤러로 보내는 것)을 진행하지 말라는 의미 
 			return false;
 		}
 		
-		
-		
-		//return true;//컨트롤러에게 전달하기		
+		//return true;// : 컨트롤러에게 전달하기		
 		return super.preHandle(request, response, handler);
 	}
-	
-	
 	
 }

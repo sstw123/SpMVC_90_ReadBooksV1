@@ -6,9 +6,9 @@
 <link rel="stylesheet" type="text/css" href="${rootPath}/css/member_join.css">
 <script src="${rootPath}/js/member_join.js"></script>
 
-<form method="POST" action="${rootPath}/member/join" class="join_form">
+<form method="POST" action="${rootPath}/member/join" class="join_form" id="join_form">
 	<div id="close_box">
-		<span id="close">X</span>
+		<span id="close">&times;</span>
 	</div>
 	<h2>회원가입</h2>
 	<h3 id="join_alert"></h3>

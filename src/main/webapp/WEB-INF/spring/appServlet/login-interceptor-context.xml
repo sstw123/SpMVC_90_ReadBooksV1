@@ -24,6 +24,7 @@
 			<ref bean="pre"/>
 		</mvc:interceptor>
 		
+		<!-- post는 사용안함
 		<mvc:interceptor>
 			<mvc:mapping path="/info/insert*" />
 			<mvc:mapping path="/info/edit*" />
@@ -32,6 +33,7 @@
 			
 			<ref bean="post"/>
 		</mvc:interceptor>
+		-->
 	</mvc:interceptors>
 
 </beans>

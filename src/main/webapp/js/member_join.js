@@ -50,7 +50,7 @@ $(function() {
 					// result가 NULL, 즉 중복된 아이디가 없으면 form submit
 					$.post(
 							rootPath + "/rest/member/join",
-							$("form").serialize(),
+							$("#join_form").serialize(),
 							function(result) {
 								if(result == 'JOIN_SUCCESS') {
 									//페이지 새로고침
@@ -69,10 +69,15 @@ $(function() {
 			}
 		})
 		
-		
 	})
 	
 	$("span#close").on("click", function() {
-		document.location.href = rootPath + "/info/list"
+		$("#join_modal").css("display", "none")
+	})
+	
+	$(document).on("keydown", function(e) {
+		if(e.keyCode == 27) {
+			$("#join_modal").css("display", "none")
+		}
 	})
 })

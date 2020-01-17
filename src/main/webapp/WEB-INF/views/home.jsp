@@ -16,9 +16,11 @@
 	<script>
 		var rootPath = "${rootPath}"
 		var MODAL= "${MODAL}"
+		var MEMBER= "${MEMBER}"
 	</script>
 	
 	<script src="${rootPath}/js/home.js"></script>
+	<script src="${rootPath}/js/nav.js"></script>
 	
 </head>
 <body>
@@ -28,16 +30,16 @@
 	
 	<nav>
 		<ul>
-			<li><a href="${rootPath}/info/list">홈</a></li>
-			<li><a href="${rootPath}/info/booklist">도서목록</a></li>
+			<li id="home">홈</li>
+			<li id="booklist">도서목록</li>
 			<c:choose>
 				<c:when test="${empty MEMBER}">
-					<li class="login-box"><a href="${rootPath}/member/login" id="login">로그인</a></li>
-					<li><a href="${rootPath}/member/join" id="join">회원가입</a></li>
+					<li class="login-box" id="login">로그인</li>
+					<li id="join">회원가입</li>
 				</c:when>
 				<c:otherwise>
 					<li class="login-box" id="m_id">${MEMBER.m_id} 님, 환영합니다!</li>
-					<li><a href="${rootPath}/member/logout" id="logout">로그아웃</a></li>
+					<li id="logout">로그아웃</li>
 				</c:otherwise>
 			</c:choose>
 		</ul>
@@ -75,12 +77,6 @@
 				</article>
 			</c:when>
 			
-			<c:when test="${RESULT == 'report_list'}">
-				<article id="report_list">
-					<%@ include file="/WEB-INF/views/include/report_list.jsp" %>
-				</article>
-			</c:when>
-			
 			<c:when test="${RESULT == 'report_insert'}">
 				<article id="report_write">
 					<%@ include file="/WEB-INF/views/include/report_insert.jsp" %>
@@ -95,13 +91,14 @@
 		</c:choose>
 	</section>
 	
-	<section id="login_modal">
-		<c:if test="${MODAL == 'LOGIN'}">
+	<section>
+		<article id="login_modal">
 			<%@ include file = "/WEB-INF/views/include/member_login.jsp" %>
-		</c:if>
-		<c:if test="${MODAL == 'JOIN'}">
+		</article>
+		
+		<article id="join_modal">
 			<%@ include file = "/WEB-INF/views/include/member_join.jsp" %>
-		</c:if>
+		</article>
 	</section>
 	
 </body>

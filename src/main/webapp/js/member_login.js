@@ -1,7 +1,9 @@
 $(function() {
 	$("#login_join").on("click", function() {
-		//회원가입 페이지로 이동
-		document.location.href = rootPath + "/member/join"
+		//회원가입 창 열기
+		$("#login_modal").css("display", "none")
+		$("#join_modal").css("display", "block")
+		
 	})
 	
 	$("#login_login").on("click", function() {
@@ -11,21 +13,21 @@ $(function() {
 		if($("#login_id").val() == "") {
 			$("#login_alert").text("아이디를 입력하세요")
 			$("#login_id").focus()
-			return false;
+			return false
 		} else if($("#login_password").val() == "") {
 			$("#login_alert").text("비밀번호를 입력하세요")
 			$("#login_password").focus()
-			return false;
+			return false
 		}
 		
 		
 		$.post(
 				rootPath + "/rest/member/login",
-				$("form").serialize(),
+				$("#login_form").serialize(),
 				function(result) {
 					if(result == 'LOGIN_SUCCESS') {
 						//이전 페이지로
-						window.history.back()
+						document.location.replace(document.location.href)
 					} else if (result == 'LOGIN_FAIL') {
 						$("#login_alert").text("아이디 또는 비밀번호가 일치하지 않습니다")
 						return false
@@ -36,7 +38,13 @@ $(function() {
 	})
 	
 	$("span#close").on("click", function() {
-		document.location.href = rootPath + "/info/list"
+		$("#login_modal").css("display", "none")
+	})
+	
+	$(document).on("keydown", function(e) {
+		if(e.keyCode == 27) {
+			$("#login_modal").css("display", "none")
+		}
 	})
 	
 })

@@ -30,7 +30,7 @@ $(function() {
 						alert("도서코드가 존재하지 않습니다")
 						return false
 					} else {
-						$("form").submit()
+						$("#report_form").submit()
 					}
 				},
 				error : function(error) {

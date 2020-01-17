@@ -39,7 +39,7 @@ $(function() {
 					alert("도서코드가 이미 존재합니다")
 					return false
 				} else {
-					$("form").submit()
+					$("#info_form").submit()
 				}
 			},
 			error : function(error) {
@@ -66,7 +66,7 @@ $(function() {
 			return false
 		}
 		
-		$("form").submit()
+		$("#info_form").submit()
 		
 	})
 })

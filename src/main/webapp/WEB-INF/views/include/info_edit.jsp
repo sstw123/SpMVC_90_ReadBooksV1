@@ -5,7 +5,7 @@
 <script src="${rootPath}/js/info_insert_edit.js"></script>
 
 <body>
-	<form:form modelAttribute="InfoDTO">
+	<form:form modelAttribute="InfoDTO" id="info_form">
 		<fieldset>
 			<legend>도서정보 수정</legend>
 			

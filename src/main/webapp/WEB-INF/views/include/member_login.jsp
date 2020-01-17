@@ -5,9 +5,9 @@
 <link rel="stylesheet" type="text/css" href="${rootPath}/css/member_login.css">
 <script src="${rootPath}/js/member_login.js"></script>
 
-<form method="POST" action="${rootPath}/member/login" class="login_form">
+<form method="POST" action="${rootPath}/member/login" class="login_form" id="login_form">
 	<div id="close_box">
-		<span id="close">X</span>
+		<span id="close">&times;</span>
 	</div>
 	<h2>로그인</h2>
 	

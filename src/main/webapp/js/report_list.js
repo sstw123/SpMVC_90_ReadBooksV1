@@ -1,16 +1,15 @@
 $(function() {
-	$("#info_edit").on("click", function(event) {
+	$(".report_edit").on("click", function(event) {
 		event.stopPropagation()
-		
 		if(MEMBER == "") {
 			$("#login_modal").css("display", "block")
 			return false
 		} else {
-			document.location.href = rootPath + "/info/edit?bookCode=" + $(this).attr("data-bcode")
+			document.location.href = rootPath + "/report/update?rb_seq=" + $(this).attr("data-seq")
 		}
 	})
 	
-	$("#info_delete").on("click", function(event) {
+	$(".report_delete").on("click", function(event) {
 		event.stopPropagation()
 		
 		if(MEMBER == "") {
@@ -18,9 +17,14 @@ $(function() {
 			return false
 		} else {
 			if(confirm("정말 삭제하시겠습니까?")) {
+				//document.location.href = rootPath + "/report/delete?rb_seq=" + $(this).attr("data-seq") + "&b_code=" + $(this).attr("data-bcode")
+				
+				let bookCode = $(this).attr("data-bcode")
+				
 				$.ajax({
-					url : rootPath + "/rest/info/delete",
+					url : rootPath + "/rest/report/delete",
 					data : {
+						rb_seq : $(this).attr("data-seq"),
 						bookCode : $(this).attr("data-bcode")
 					},// 앞은 controller에서 받은 변수명, 뒤는 JS에서 보낼 값
 					type : 'POST',
@@ -30,7 +34,7 @@ $(function() {
 							return false
 						} else {
 							//삭제 성공시 새로고침
-							document.location.href = rootPath + "/info/list"
+							document.location.replace(rootPath + "/info/info?bookCode=" +  bookCode)
 						}
 					},
 					error : function(error) {
@@ -39,25 +43,9 @@ $(function() {
 							return false
 						}
 					}
+					
 				})
-				return false;
 			}
 		}
 	})
-	
-	
-	$("tr.report_record").on("click", function() {
-		document.location.href = rootPath + "/info/info?bookCode=" + $(this).attr("data-bcode") + "&rb_seq=" + $(this).attr("data-seq")
-	})
-	
-	$("#report_write[data-bcode]").on("click", function() {
-		if(MEMBER == "") {
-			$("#login_modal").css("display", "block")
-			return false
-		} else {
-			document.location.href = rootPath + "/report/insert?bookCode=" + $(this).attr("data-bcode")
-		}
-	})
-	
-	
 })

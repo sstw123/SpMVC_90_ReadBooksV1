@@ -1,6 +1,11 @@
 $(function() {
 	$("button#info_insert").on("click", function() {
-		document.location.href = rootPath + "/info/insert"
+		if(MEMBER == "") {
+			$("#login_modal").css("display", "block")
+			return false
+		} else {
+			document.location.href = rootPath + "/info/insert"
+		}
 	})
 	
 	$("tr.record").on("click", function() {
