@@ -12,32 +12,32 @@
 			
 			<div>
 				<label for="rb_bcode">도서번호</label>
-				<input type="text" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}"/>
+				<input type="text" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}" maxlength="20"/>
 			</div>
 			
 			<div>
 				<label for="rb_date">독서일자</label>
-				<input type="date" name="rb_date" id="rb_date" placeholder="독서일자" value="${reportInsertDTO.rb_date}"/>
+				<input type="date" name="rb_date" id="rb_date" placeholder="독서일자" value="${reportInsertDTO.rb_date}" maxlength="10"/>
 			</div>
 			
 			<div>
 				<label for="rb_stime">독서시작시각</label>
-				<input type="text" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}"/>
+				<input type="text" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}" maxlength="10"/>
 			</div>
 			
 			<div>
 				<label for="rb_rtime">독서시간</label>
-				<input type="text" name="rb_rtime" id="rb_rtime" placeholder="독서시간"/>
+				<input type="text" name="rb_rtime" id="rb_rtime" placeholder="독서시간" maxlength="10"/>
 			</div>
 			
 			<div>
 				<label for="rb_subject">한줄소감</label>
-				<input type="text" name="rb_subject" id="rb_subject" placeholder="한줄소감"/>
+				<input type="text" name="rb_subject" id="rb_subject" placeholder="한줄소감" maxlength="20"/>
 			</div>
 			
 			<div>
 				<label for="rb_text">긴줄소감</label>
-				<textarea name="rb_text" id="rb_text" placeholder="긴줄소감"></textarea>
+				<textarea name="rb_text" id="rb_text" placeholder="긴줄소감" maxlength="400"></textarea>
 			</div>
 			
 			<div>
