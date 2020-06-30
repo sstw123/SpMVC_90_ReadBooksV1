@@ -7,7 +7,7 @@ grant dba to bookuser;
 create table tbl_books(
     B_CODE	VARCHAR2(20)		PRIMARY KEY,
     B_NAME	nVARCHAR2(125)	NOT NULL,
-    B_AUTHER	nVARCHAR2(125)	NOT NULL,
+    B_AUTHOR	nVARCHAR2(125)	NOT NULL,
     B_COMP	nVARCHAR2(125),
     B_YEAR	VARCHAR2(10),
     B_IPRICE	NUMBER

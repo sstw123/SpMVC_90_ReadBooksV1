@@ -20,28 +20,28 @@
 			</div>
 			
 			<div>
-				<label for="rb_stime">독서시작시각</label>
+				<label for="rb_stime">독서시작시간</label>
 				<form:input type="time" path="rb_stime" placeholder="독서시작시각"/>
 			</div>
 			
 			<div>
-				<label for="rb_rtime">독서시간</label>
+				<label for="rb_rtime">독서시간(시간)</label>
 				<form:input type="number" path="rb_rtime" placeholder="독서시간"/>
-			</div>
-			
-			<div>
-				<label for="rb_subject">한줄소감</label>
-				<form:input type="text" path="rb_subject" placeholder="한줄소감"/>
-			</div>
-			
-			<div>
-				<label for="rb_text">긴줄소감</label>
-				<form:textarea type="text" path="rb_text" placeholder="긴줄소감"/>
 			</div>
 			
 			<div>
 				<label for="rb_star">별점</label>
 				<form:input type="number" path="rb_star" placeholder="별점" min="1" max="5" value="${reportDTO.rb_star}" />
+			</div>
+			
+			<div>
+				<label for="rb_subject">한줄평</label>
+				<form:input type="text" path="rb_subject" placeholder="한줄소감"/>
+			</div>
+			
+			<div>
+				<label for="rb_text">소감</label>
+				<form:textarea type="text" path="rb_text" placeholder="긴줄소감"/>
 			</div>
 			
 			<div>

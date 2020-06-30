@@ -20,6 +20,9 @@ public interface BookReportDao {
 	@Select("select * from TBL_READ_BOOK where RB_SEQ = #{rb_seq,jdbcType=VARCHAR}")
 	public BookReportDTO selectBySeq(long rb_seq);
 	
+	@Select("select count(*) from TBL_READ_BOOK where RB_BCODE = #{b_code,jdbcType=VARCHAR}")
+	public long countReport(String b_code);
+	
 	@InsertProvider(type=BookReportSQL.class, method="report_insert_sql")
 	public int insert(BookReportDTO reportDTO);
 	
@@ -28,4 +31,5 @@ public interface BookReportDao {
 	
 	@Delete("delete from TBL_READ_BOOK where RB_SEQ = #{rb_seq,jdbcType=VARCHAR}")
 	public int delete(long rb_seq);
+	
 }

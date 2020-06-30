@@ -10,7 +10,7 @@
 			<legend>도서정보 수정</legend>
 			
 			<div>
-				<label for="b_code">도서코드</label><br/>
+				<label for="b_code">ISBN</label><br/>
 				<form:input type="text" path="b_code" placeholder="도서코드" maxlength="17" readonly="true" style="background-color: #e2e2e2;"/>
 			</div>
 			
@@ -20,8 +20,8 @@
 			</div>
 			
 			<div>
-				<label for="b_auther">저자</label><br/>
-				<form:input type="text" path="b_auther" placeholder="저자" maxlength="125"/>
+				<label for="b_author">저자</label><br/>
+				<form:input type="text" path="b_author" placeholder="저자" maxlength="125"/>
 			</div>
 			
 			<div>

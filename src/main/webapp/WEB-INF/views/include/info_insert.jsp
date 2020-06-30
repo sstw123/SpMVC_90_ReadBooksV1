@@ -10,7 +10,7 @@
 			<legend>도서 등록</legend>
 			
 			<div>
-				<label for="b_code">도서코드</label><br/>
+				<label for="b_code">ISBN</label><br/>
 				<input type="text" id="b_code" name="b_code" placeholder="도서코드" maxlength="17"/>
 			</div>
 			
@@ -20,8 +20,8 @@
 			</div>
 			
 			<div>
-				<label for="b_auther">저자</label><br/>
-				<input type="text" id="b_auther" name="b_auther" placeholder="저자" maxlength="125"/>
+				<label for="b_author">저자</label><br/>
+				<input type="text" id="b_author" name="b_author" placeholder="저자" maxlength="125"/>
 			</div>
 			
 			<div>

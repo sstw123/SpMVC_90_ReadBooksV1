@@ -1,20 +1,26 @@
 @charset "UTF-8";
 
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-	text-align: center;
-	
-	padding: 10px 16px;
-	margin: 0px auto;
-}
-
 p.noReport {
 	text-align: center;
 }
 
-.td_edit, .td_delete {
-	padding:0;
+table, th, td {
+	border-collapse: collapse;
+	text-align: center;
+	padding: 10px 16px;
+	margin: 0px auto;
+}
+
+table {
+	width:100%;
+	font-size: 14px;
+}
+
+th, td {
+	width: auto;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
 }
 
 tr.report_record {
@@ -25,25 +31,11 @@ tr.report_record:hover {
 	background-color: #e7e7e7;
 }
 
-.report_edit, .report_delete {
-	color: red;
-	padding: 10px 16px;
+tr:first-child {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
-.report_edit:hover, .report_delete:hover {
-	color: white;
-	background-color: black;
-	cursor: pointer;
-}
-
-.report_edit a {
-	text-decoration: none;
-	color:red;
-	padding: 1px;
-}
-
-.report_edit a:hover {
-	color: white;
-	background-color: black;
-	cursor: pointer;
+tr:nth-child(n+2) {
+	border-bottom: 1px solid #d9d9d9;
 }

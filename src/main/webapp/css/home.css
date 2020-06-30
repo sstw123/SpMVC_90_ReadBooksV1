@@ -13,11 +13,11 @@ header {
 	padding: 14px 16px;
 }
 
-section#result {
+#result {
 	margin: 20px auto;
 }
 
-article#login_modal, article#join_modal {
+#login_modal, #join_modal {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -28,7 +28,7 @@ article#login_modal, article#join_modal {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-article#login_modal form, article#join_modal form {
+#login_modal form, #join_modal form {
 	position: relative;
 	padding: 10px;
 	margin: auto;

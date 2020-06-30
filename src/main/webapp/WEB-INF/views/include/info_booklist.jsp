@@ -10,7 +10,7 @@
 	<table>
 		<tr>
 			<th>번호</th>
-			<th>도서코드</th>
+			<th>ISBN</th>
 			<th>도서명</th>
 			<th>저자</th>
 			<th>출판사</th>
@@ -22,16 +22,19 @@
 				<td>${status.count}</td>
 				<td>${infoDTO.b_code}</td>
 				<td>${infoDTO.b_name}</td>
-				<td>${infoDTO.b_auther}</td>
+				<td>${infoDTO.b_author}</td>
 				<td>${infoDTO.b_comp}</td>
 				<td>${infoDTO.b_year}</td>
 				<td>${infoDTO.b_iprice}</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<div class="button_box">
+	<article class="button_box">
 		<button id="info_insert" type="button">도서등록</button>
-	</div>
+	</article>
+	
+	<%@ include file="/WEB-INF/views/include/search.jsp" %>
+	
 	<section>
 		<%@ include file="/WEB-INF/views/include/pagination.jsp" %>
 	</section>

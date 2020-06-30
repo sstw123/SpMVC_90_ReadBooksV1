@@ -11,8 +11,8 @@
 			<legend>독서록 작성</legend>
 			
 			<div>
-				<label for="rb_bcode">도서번호</label>
-				<input type="text" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}" maxlength="20"/>
+				<label for="rb_bcode">ISBN</label>
+				<input type="text" name="rb_bcode" id="rb_bcode" value="${reportInsertDTO.rb_bcode}" maxlength="20" readonly="true" style="background-color: #e2e2e2;"/>
 			</div>
 			
 			<div>
@@ -21,28 +21,28 @@
 			</div>
 			
 			<div>
-				<label for="rb_stime">독서시작시각</label>
+				<label for="rb_stime">독서시작시간</label>
 				<input type="text" name="rb_stime" id="rb_stime" placeholder="독서시작시각" value="${reportInsertDTO.rb_stime}" maxlength="10"/>
 			</div>
 			
 			<div>
-				<label for="rb_rtime">독서시간</label>
+				<label for="rb_rtime">독서시간(시간)</label>
 				<input type="text" name="rb_rtime" id="rb_rtime" placeholder="독서시간" maxlength="10"/>
-			</div>
-			
-			<div>
-				<label for="rb_subject">한줄소감</label>
-				<input type="text" name="rb_subject" id="rb_subject" placeholder="한줄소감" maxlength="20"/>
-			</div>
-			
-			<div>
-				<label for="rb_text">긴줄소감</label>
-				<textarea name="rb_text" id="rb_text" placeholder="긴줄소감" maxlength="400"></textarea>
 			</div>
 			
 			<div>
 				<label for="rb_star">별점</label>
 				<input type="text" name="rb_star" id="rb_star" placeholder="별점" min="1" max="5" value="${reportInsertDTO.rb_star}" />
+			</div>
+			
+			<div>
+				<label for="rb_subject">한줄평</label>
+				<input type="text" name="rb_subject" id="rb_subject" placeholder="한줄소감" maxlength="20"/>
+			</div>
+			
+			<div>
+				<label for="rb_text">소감</label>
+				<textarea name="rb_text" id="rb_text" placeholder="긴줄소감" maxlength="400"></textarea>
 			</div>
 			
 			<div>

@@ -48,18 +48,21 @@
 	<section id="result">
 		<c:choose>
 			<c:when test="${RESULT == 'info_list'}">
+				<c:set var="URL" value="${rootPath}/info/list?"/>
 				<article id="info_list">
 					<%@ include file="/WEB-INF/views/include/info_list.jsp" %>
 				</article>
 			</c:when>
 			
 			<c:when test="${RESULT == 'info_booklist'}">
+				<c:set var="URL" value="${rootPath}/info/booklist?"/>
 				<article id="info_booklist">
 					<%@ include file="/WEB-INF/views/include/info_booklist.jsp" %>
 				</article>
 			</c:when>
 			
 			<c:when test="${RESULT == 'info_info'}">
+				<c:set var="URL" value="${rootPath}/info/info?bookCode=${InfoDTO.b_code}&"/>
 				<article id="info_info">
 					<%@ include file="/WEB-INF/views/include/info_info.jsp" %>
 				</article>

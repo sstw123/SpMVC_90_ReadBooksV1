@@ -64,7 +64,7 @@ public class PaginationService {
 		int offset = (currPageNo - 1) * listPerPage + 1;
 		int limit = offset + listPerPage - 1;
 		
-		PaginationDTO pagiDTO = PaginationDTO.builder()
+		PaginationDTO pageDTO = PaginationDTO.builder()
 				.totalCount(totalCount)
 				.listPerPage(listPerPage)
 				.pageCount(pageCount)
@@ -83,7 +83,7 @@ public class PaginationService {
 				.currentPageNo(currPageNo)
 				.build();
 		
-		return pagiDTO;
+		return pageDTO;
 	}
 
 }

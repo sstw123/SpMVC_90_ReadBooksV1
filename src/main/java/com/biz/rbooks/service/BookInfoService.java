@@ -50,8 +50,12 @@ public class BookInfoService {
 		return infoDao.countAll();
 	}
 
-	public List<BookInfoDTO> selectByPage(PaginationDTO pagiDTO) {
-		return infoDao.selectByPage(pagiDTO);
+	public List<BookInfoDTO> selectBooksBySrchPage(PaginationDTO pageDTO, String srch_opt, String srch) {
+		return infoDao.selectBooksBySrchPage(pageDTO, srch_opt, srch);
+	}
+
+	public BookInfoDTO selectByBCodePage(String b_code, PaginationDTO pageDTO) {
+		return infoDao.selectByBCodePage(b_code, pageDTO);
 	}
 
 }

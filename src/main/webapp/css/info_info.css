@@ -1,21 +1,28 @@
 @charset "UTF-8";
 
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
+.info_box {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.title {
+	margin: 10px 0;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#book_info, #report_info {
 	text-align: center;
 	
-	padding: 10px 16px;
-	margin: 0px auto;
+	width: 80%;
+	margin: 0 auto;
+	
+	border: 2px solid skyblue;
+	border-radius: 10px;
 }
 
-article.title {
-	text-align: center;
-	margin: 10px 0;
-}
-
-article.title p {
-	font-size: 20px;
+p.book_name {
 	font-weight: bold;
 }
 
@@ -23,23 +30,12 @@ p.noReport {
 	text-align: center;
 }
 
-#info_insert {
-	display:block;
-	margin: 10px 0 30px auto;
-	padding: 14px 16px;
+.button_box {
+	text-align: right;
+	margin-top: 20px;
 }
 
-.button_box1 {
-	text-align: center;
-	width: 80%;
-	margin: 0 auto;
-}
-
-.button_box2 {
-	text-align: center;
-}
-
-.info_button {
+button.info_button {
 	background-color: white;
 	padding: 14px 16px;
 	margin: 10px;
@@ -49,7 +45,7 @@ p.noReport {
 	color: skyblue;
 }
 
-.info_button:hover {
+button.info_button:hover {
 	color: white;
 	background-color: skyblue;
 	cursor: pointer;

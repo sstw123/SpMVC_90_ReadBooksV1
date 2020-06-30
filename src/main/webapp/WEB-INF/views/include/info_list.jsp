@@ -9,10 +9,10 @@
 	<table>
 		<tr>
 			<th>번호</th>
-			<th>도서코드</th>
+			<th>ISBN</th>
 			<th>도서명</th>
 			<th>독서일자</th>
-			<th>한줄소감</th>
+			<th>한줄평</th>
 			<th>별점</th>
 		</tr>
 		<c:forEach items="${InfoList}" var="infoDTO" varStatus="status">
@@ -26,9 +26,12 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<div class="button_box">
+	<article class="button_box">
 		<button id="info_insert" type="button">도서등록</button>
-	</div>
+	</article>
+	
+	<%@ include file="/WEB-INF/views/include/search.jsp" %>
+	
 	<section>
 		<%@ include file="/WEB-INF/views/include/pagination.jsp" %>
 	</section>

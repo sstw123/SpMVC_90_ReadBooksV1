@@ -1,4 +1,9 @@
 $(function() {
+	$("tr.report_record").on("click", function() {
+		document.location.href = rootPath + "/info/info?bookCode=" + $(this).data("bcode") + "&rb_seq=" + $(this).data("seq")
+	})
+	
+	/*
 	$(".report_edit").on("click", function(event) {
 		event.stopPropagation()
 		if(MEMBER == "") {
@@ -48,4 +53,5 @@ $(function() {
 			}
 		}
 	})
+	*/
 })

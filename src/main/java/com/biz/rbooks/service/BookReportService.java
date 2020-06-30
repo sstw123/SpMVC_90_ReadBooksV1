@@ -76,5 +76,9 @@ public class BookReportService {
 	public List<BookReportDTO> selectAll() {
 		return reportDao.selectAll();
 	}
+
+	public long countReport(String b_code) {
+		return reportDao.countReport(b_code);
+	}
 	
 }

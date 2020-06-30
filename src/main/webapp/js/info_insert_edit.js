@@ -21,9 +21,9 @@ $(function() {
 			alert("도서명을 입력하세요")
 			$("#b_name").focus()
 			return false
-		} else if($("#b_auther").val() == "") {
+		} else if($("#b_author").val() == "") {
 			alert("저자를 입력하세요")
-			$("#b_auther").focus()
+			$("#b_author").focus()
 			return false
 		}
 		
@@ -60,9 +60,9 @@ $(function() {
 			alert("도서명을 입력하세요")
 			$("#b_name").focus()
 			return false
-		} else if($("#b_auther").val() == "") {
+		} else if($("#b_author").val() == "") {
 			alert("저자를 입력하세요")
-			$("#b_auther").focus()
+			$("#b_author").focus()
 			return false
 		}
 		

@@ -5,11 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.biz.rbooks.domain.BookReportDTO;
 import com.biz.rbooks.service.BookReportService;
@@ -17,7 +15,6 @@ import com.biz.rbooks.service.BookReportService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@SessionAttributes("reportDTO")
 @RequestMapping("report")
 @Controller
 public class BookReportController {
@@ -28,11 +25,6 @@ public class BookReportController {
 	public BookReportController(BookReportService reportSvc) {
 		super();
 		this.reportSvc = reportSvc;
-	}
-
-	@ModelAttribute("reportDTO")
-	public BookReportDTO reportDTO() {
-		return new BookReportDTO();
 	}
 	// 생성자 끝
 	
@@ -54,16 +46,11 @@ public class BookReportController {
 		// @ModelAttribute를 넣으면 수정 버튼 클릭 후 뒤로가기 등을 눌렀을 때 값이 유지되어 나타나기 때문
 
 		BookReportDTO reportInsertDTO = new BookReportDTO();
-
-		//rb_bcode, 독서일자, 독서시작시간, 기본별점 세팅후 반환받기
 		reportInsertDTO = reportSvc.setDefaultInsert(reportInsertDTO, b_code);
+		//rb_bcode, 독서일자, 독서시작시간, 기본별점 세팅후 반환받기
 		
 		model.addAttribute("RESULT", "report_insert");
 		model.addAttribute("reportInsertDTO", reportInsertDTO);
-		
-		//독서록 쓰기를 눌렀다가 뒤로가기를 눌러도, SessionAttributes의 reportDTO의 값을 null로 바꿔서
-		//독서록이 하나도 없다면 info_info.jsp에 표시 안되도록 하기
-		model.addAttribute("reportDTO", null);
 		
 		return "home";//report_insert.jsp에는 기본값들이 세팅된 reportDTO값이 전부 들어간다
 	}
@@ -77,10 +64,9 @@ public class BookReportController {
 	}
 	
 	@RequestMapping(value="update", method=RequestMethod.GET)
-	public String update(@RequestParam("rb_seq") String str_rb_seq, Model model) {
-		long rb_seq = Long.valueOf(str_rb_seq);
+	public String update(@RequestParam("rb_seq") long rb_seq, Model model) {
 		
-		BookReportDTO reportDTO = reportSvc.selectBySeq(rb_seq);//get으로 입력받은 rb_seq값으로 DB에서 레코드 가져오기
+		BookReportDTO reportDTO = reportSvc.selectBySeq(rb_seq);//get으로 입력받은 rb_seq값으로 DB에서 튜플 가져오기
 		
 		model.addAttribute("RESULT", "report_edit");
 		model.addAttribute("reportDTO", reportDTO);
@@ -89,7 +75,7 @@ public class BookReportController {
 	}
 	
 	@RequestMapping(value="update", method=RequestMethod.POST)
-	public String update(@ModelAttribute("reportDTO") BookReportDTO reportDTO) {
+	public String update(BookReportDTO reportDTO) {
 		
 		int ret = reportSvc.update(reportDTO);//report_insert에서 입력한 값을 POST 메소드의 reportDTO로 수신하고 그걸로 독서록 DB 업데이트
 		
